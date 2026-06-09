@@ -56,7 +56,7 @@ export default function App() {
         <div className="hero-video-container">
           <video 
             className="hero-video" 
-            src="/background.mp4" 
+            src={`${import.meta.env.BASE_URL}background.mp4`} 
             autoPlay 
             loop 
             muted 
