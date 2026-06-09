@@ -61,7 +61,7 @@ export default function PainChart() {
           </div>
           
           <div className="body-container reveal">
-            <svg viewBox="0 0 200 500" id="body-svg" xmlns="http://www.w3.org/2000/svg">
+            <svg viewBox="0 0 200 520" id="body-svg" xmlns="http://www.w3.org/2000/svg">
               {/* Head */}
               <ellipse className={`br ${selectedRegion === 'Head' ? 'sel' : ''}`} cx="100" cy="45" rx="32" ry="38" onClick={() => handleSelect('Head')} />
               {/* Neck */}
@@ -93,12 +93,28 @@ export default function PainChart() {
               <path className={`br ${selectedRegion === 'Lower Back' ? 'sel' : ''}`} d="M62 210 Q62 230 100 235 Q138 230 138 210 Q120 200 100 198 Q80 200 62 210Z" onClick={() => handleSelect('Lower Back')} />
               
               {/* Thigh L & R */}
-              <rect className={`br ${selectedRegion === 'Thigh' ? 'sel' : ''}`} x="62" y="267" width="36" height="80" rx="12" onClick={() => handleSelect('Thigh')} />
-              <rect className={`br ${selectedRegion === 'Thigh' ? 'sel' : ''}`} x="102" y="267" width="36" height="80" rx="12" onClick={() => handleSelect('Thigh')} />
+              <rect className={`br ${selectedRegion === 'Thigh' ? 'sel' : ''}`} x="62" y="267" width="36" height="85" rx="12" onClick={() => handleSelect('Thigh')} />
+              <rect className={`br ${selectedRegion === 'Thigh' ? 'sel' : ''}`} x="102" y="267" width="36" height="85" rx="12" onClick={() => handleSelect('Thigh')} />
               
+              {/* Knee L & R */}
+              <ellipse className={`br ${selectedRegion === 'Knee' ? 'sel' : ''}`} cx="80" cy="370" rx="16" ry="16" onClick={() => handleSelect('Knee')} />
+              <ellipse className={`br ${selectedRegion === 'Knee' ? 'sel' : ''}`} cx="120" cy="370" rx="16" ry="16" onClick={() => handleSelect('Knee')} />
+
               {/* Calf L & R */}
-              <ellipse className={`br ${selectedRegion === 'Calf' ? 'sel' : ''}`} cx="80" cy="422" rx="20" ry="28" onClick={() => handleSelect('Calf')} />
-              <ellipse className={`br ${selectedRegion === 'Calf' ? 'sel' : ''}`} cx="120" cy="422" rx="20" ry="28" onClick={() => handleSelect('Calf')} />
+              <ellipse className={`br ${selectedRegion === 'Calf' ? 'sel' : ''}`} cx="80" cy="420" rx="20" ry="32" onClick={() => handleSelect('Calf')} />
+              <ellipse className={`br ${selectedRegion === 'Calf' ? 'sel' : ''}`} cx="120" cy="420" rx="20" ry="32" onClick={() => handleSelect('Calf')} />
+              
+              {/* Shin L & R (overlapping calf) */}
+              <rect className={`br ${selectedRegion === 'Shin' ? 'sel' : ''}`} x="74" y="388" width="12" height="60" rx="6" onClick={() => handleSelect('Shin')} />
+              <rect className={`br ${selectedRegion === 'Shin' ? 'sel' : ''}`} x="114" y="388" width="12" height="60" rx="6" onClick={() => handleSelect('Shin')} />
+
+              {/* Ankle L & R */}
+              <ellipse className={`br ${selectedRegion === 'Ankle' ? 'sel' : ''}`} cx="80" cy="462" rx="14" ry="10" onClick={() => handleSelect('Ankle')} />
+              <ellipse className={`br ${selectedRegion === 'Ankle' ? 'sel' : ''}`} cx="120" cy="462" rx="14" ry="10" onClick={() => handleSelect('Ankle')} />
+
+              {/* Foot L & R */}
+              <rect className={`br ${selectedRegion === 'Foot' ? 'sel' : ''}`} x="66" y="468" width="28" height="30" rx="8" onClick={() => handleSelect('Foot')} />
+              <rect className={`br ${selectedRegion === 'Foot' ? 'sel' : ''}`} x="106" y="468" width="28" height="30" rx="8" onClick={() => handleSelect('Foot')} />
               
               <line x1="100" y1="83" x2="100" y2="212" stroke="var(--text)" strokeWidth="0.3" opacity="0.12" strokeDasharray="3,4" style={{pointerEvents:'none'}} />
             </svg>
